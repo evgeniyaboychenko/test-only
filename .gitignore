@@ -1,0 +1,6 @@
+build
+node_modules
+.git
+
+.vscode/*
+!.vscode/extensions.json
