@@ -74,9 +74,6 @@ $topForCircle: 45px;
   &__controller-wrap {
     @include maxBp($breakpoint-tablet) {
       position: relative;
-      //   display: flex;
-      //   gap: 10px;
-      //   align-items: flex-start;
     }
   }
 
@@ -249,7 +246,7 @@ $topForCircle: 45px;
   &__navigation_wrap {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 22px;
     align-items: flex-start;
     padding-left: 80px;
     padding-bottom: 56px;
@@ -258,6 +255,7 @@ $topForCircle: 45px;
       padding-left: 20px;
       padding-right: 20px;
       padding-bottom: 0;
+      gap: 12px;
     }
   }
 
@@ -269,7 +267,7 @@ $topForCircle: 45px;
 
 .slide__date-wrapper {
   padding-top: 230px;
-  padding-bottom: 100px;
+  padding-bottom: 140px;
   display: flex;
   justify-content: center;
   gap: 60px;
@@ -279,9 +277,11 @@ $topForCircle: 45px;
   letter-spacing: -0.02em;
 
   @include maxBp($breakpoint-tablet) {
-    padding-top: 0;
+    padding-top: 115px;
     padding-bottom: 0;
+    gap: 25px;
     font-size: 56px;
+    line-height: normal;
   }
 }
 

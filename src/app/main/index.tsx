@@ -10,7 +10,6 @@ function Main() {
         <section className='historical-dates'>
           <h1 className='historical-dates__title'>Исторические даты</h1>
           <Slider historicalEvents={historicalEvents} />
-          <Slider historicalEvents={historicalEvents} />
         </section>
       </div>
     </main>

@@ -35,7 +35,7 @@ export const historicalEvents = [
     id: 2,
     from: '1940',
     to: '1964',
-    name: 'wewewew',
+    name: 'Открытия',
     eventList: [
       {
         id: 1,
@@ -79,7 +79,7 @@ export const historicalEvents = [
     id: 3,
     from: '1964',
     to: '1984',
-    name: 'Наука2',
+    name: 'Космос',
     eventList: [
       {
         id: 1,
@@ -123,7 +123,7 @@ export const historicalEvents = [
     id: 4,
     from: '1985',
     to: '1999',
-    name: 'Наука4',
+    name: 'Политика',
     eventList: [
       {
         id: 1,
@@ -167,7 +167,7 @@ export const historicalEvents = [
     id: 5,
     from: '2000',
     to: '2010',
-    name: 'Наука',
+    name: 'Искусство',
     eventList: [
       {
         id: 1,
@@ -211,7 +211,7 @@ export const historicalEvents = [
     id: 6,
     from: '2011',
     to: '2025',
-    name: 'wewewew',
+    name: 'Медицина',
     eventList: [
       {
         id: 1,
@@ -233,18 +233,6 @@ export const historicalEvents = [
       },
       {
         id: 4,
-        event:
-          'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11',
-        date: '1991',
-      },
-      {
-        id: 5,
-        event:
-          'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11',
-        date: '1992',
-      },
-      {
-        id: 6,
         event:
           'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11',
         date: '1993',

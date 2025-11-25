@@ -54,7 +54,7 @@ function Slider({ historicalEvents }: IProps) {
   );
 
   const getFraction = (activeIndex: number) => {
-    return `${activeIndex < 9 ? `0${activeIndex + 1}` : activeIndex + 1}/ ${
+    return `${activeIndex < 9 ? `0${activeIndex + 1}` : activeIndex + 1}/${
       historicalEvents.length < 10 ? `0${historicalEvents.length}` : historicalEvents.length
     }`;
   };
