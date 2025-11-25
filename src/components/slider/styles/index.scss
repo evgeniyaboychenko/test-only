@@ -1,0 +1,311 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+$circleDiametr: 530px;
+$topForCircle: 45px;
+
+.slider {
+  width: 100%;
+
+  &::after {
+    position: absolute;
+    content: '';
+    z-index: 1;
+    top: 0;
+
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background-color: $color-black-blue-02;
+  }
+
+  @include maxBp($breakpoint-tablet) {
+    &::after {
+      content: none;
+    }
+  }
+
+  &__swiper {
+    &::before {
+      position: absolute;
+      content: '';
+      z-index: 1;
+      top: calc($circleDiametr / 2 + $topForCircle);
+
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $color-black-blue-02;
+    }
+
+    @include maxBp($breakpoint-tablet) {
+      &::before {
+        content: none;
+      }
+    }
+
+    .swiper-slide {
+      .slide__date-wrapper {
+        opacity: 0;
+      }
+      .slide__title {
+        opacity: 0;
+      }
+    }
+
+    .swiper-slide-active {
+      .slide__date-wrapper {
+        opacity: 1;
+      }
+      .slide__title {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__wrap {
+    @include maxBp($breakpoint-tablet) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__controller-wrap {
+    @include maxBp($breakpoint-tablet) {
+      position: relative;
+      //   display: flex;
+      //   gap: 10px;
+      //   align-items: flex-start;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    gap: 20px;
+
+    @include maxBp($breakpoint-tablet) {
+      gap: 8px;
+    }
+  }
+
+  &__button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid $color-black-blue-05;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: $color-white;
+    }
+
+    @include maxBp($breakpoint-tablet) {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &__button-disabled {
+    cursor: default;
+    opacity: 50%;
+
+    &:hover {
+      background-color: initial;
+    }
+  }
+
+  &__button-next {
+    rotate: 180deg;
+  }
+  &__dots {
+    position: absolute;
+    top: $topForCircle;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    width: $circleDiametr;
+    height: $circleDiametr;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid $color-black-blue-02;
+
+    @include maxBp($breakpoint-tablet) {
+      height: 6px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    border: 1px solid $color-black-blue;
+    background-color: $color-black-blue;
+    padding: 0;
+    transition:
+      width 0.3s ease-in-out,
+      background-color 0.3s ease-in-out,
+      height 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $color-gray;
+      background-color: $background-color;
+
+      .slider__dot-number {
+        display: inline;
+      }
+    }
+
+    &_active {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $color-gray;
+      background-color: $background-color;
+      cursor: default;
+
+      .slider__dot-number {
+        display: inline;
+      }
+      .slider__dot-name {
+        display: inline;
+        position: absolute;
+        left: calc(100% + 20px);
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: 700;
+      }
+    }
+
+    @include maxBp($breakpoint-tablet) {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+      opacity: 0.4;
+      border: none;
+      background-color: $color-black-blue;
+      &:hover {
+        background-color: $color-black-blue;
+        opacity: 1;
+        width: 6px;
+        height: 6px;
+        .slider__dot-number {
+          display: none;
+        }
+      }
+      &_active {
+        background-color: $color-black-blue;
+        opacity: 1;
+        width: 6px;
+        height: 6px;
+        opacity: 1;
+        border: none;
+        .slider__dot-number {
+          display: none;
+        }
+
+        .slider__dot-name {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__dot-number {
+    display: none;
+  }
+
+  &__dot-name {
+    display: none;
+  }
+
+  &__navigation_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+    padding-left: 80px;
+    padding-bottom: 56px;
+
+    @include maxBp($breakpoint-tablet) {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__fraction {
+    font-size: 14px;
+    line-height: 0.78;
+  }
+}
+
+.slide__date-wrapper {
+  padding-top: 230px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  font-size: 200px;
+  font-weight: 700;
+  line-height: 160px;
+  letter-spacing: -0.02em;
+
+  @include maxBp($breakpoint-tablet) {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 56px;
+  }
+}
+
+.slide__title {
+  display: none;
+  @include maxBp($breakpoint-tablet) {
+    display: inline-block;
+    padding-left: 20px;
+    padding-top: 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.slide__date-to {
+  color: $color-fuschia-100;
+  @include maxBp($breakpoint-tablet) {
+    color: $color-fuschia-80;
+  }
+}
+
+.slide__date-from {
+  color: $color-iris-100;
+  @include maxBp($breakpoint-tablet) {
+    color: $color-blue;
+  }
+}

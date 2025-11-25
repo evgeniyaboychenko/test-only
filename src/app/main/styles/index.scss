@@ -1,0 +1,76 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: calc($content-area + $main-padding * 3);
+  padding-right: $main-padding;
+  padding-left: calc(2 * $main-padding);
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  @include maxBp($breakpoint-laptop) {
+    padding-right: $laptop-padding;
+    padding-left: $laptop-padding;
+  }
+
+  @include maxBp($breakpoint-tablet) {
+    padding: 0;
+  }
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  border-left: 1px solid $color-black-blue-01;
+  border-right: 1px solid $color-black-blue-01;
+
+  @include maxBp($breakpoint-tablet) {
+    border: none;
+  }
+}
+
+.historical-dates {
+  position: relative;
+  padding: 0;
+  padding-top: 170px;
+
+  @include maxBp($breakpoint-tablet) {
+    padding-top: 59px;
+  }
+}
+
+.historical-dates__title {
+  position: absolute;
+  margin: 0;
+  max-width: 433px;
+  padding-left: 80px;
+  font-size: 56px;
+  line-height: 120%;
+  font-weight: 700;
+  font-family: 'PT Sans', sans-serif;
+
+  &::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 50%;
+    transform: translate3d(-1px, -50%, 0);
+    width: 5px;
+    height: 120px;
+    background: linear-gradient(#3877ee, #ef5da8);
+  }
+
+  @include maxBp($breakpoint-tablet) {
+    max-width: 123px;
+    padding-left: 20px;
+    font-size: 20px;
+    &::before {
+      content: none;
+    }
+  }
+}

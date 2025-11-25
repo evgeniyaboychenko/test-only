@@ -1,0 +1,21 @@
+@mixin maxBp($point) {
+  @media only screen and (max-width: $point) {
+    @content;
+  }
+}
+
+@mixin reset-list($padding: 0, $margin: 0) {
+  padding: $padding;
+  margin: $margin;
+  list-style: none;
+}
+
+@mixin reset-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}

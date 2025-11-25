@@ -1,0 +1,1 @@
+export const BREAKPOINT_TABLET = 1024;
